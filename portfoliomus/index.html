@@ -8,8 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/mus.jpeg" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="images/image.png" type="image/x-icon" />
+  <link rel="icon" href="images/favicon-64.png" type="image/png" />
   <!-- <link rel="shortcut icon" href="images/Gemini_Generated_Image_gnljrignljrignljpng" type="image/x-icon" > -->
 </head>
 <body>
@@ -20,10 +21,12 @@
       <nav class="nav-links" id="navLinks">
         <!-- <a href="#top">Home</a> -->
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#services">Services</a>
         <a href="#work">Projects</a>
         <a href="#contact">Contact</a>
+        <!-- <a href="assets/Mustabshira-Yusuf-CV.pdf" download>CV</a> -->
       </nav>
       <div class="nav-actions">
         <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
@@ -35,20 +38,21 @@
   <!-- ============ HERO ============ -->
   <section id="top" class="hero">
     <div class="container hero-grid">
-      <div class="hero-text reveal">
+      <div class="hero-text">
         <span class="eyebrow"><span class="line"></span> Welcome to my portfolio · 2026</span>
         <h1 class="display">
           Creative <em class="gold">Developer</em><br />
           &amp; Designer.
         </h1>
         <p class="lead">
-          I'm Mustabshira ,I build luxury digital experiences with precision
+          I'm Mustabshira, and I build luxury digital experiences with precision
           and elegance. I craft premium web solutions that blend innovation
           with timeless design.
         </p>
         <div class="cta-row">
           <a href="#work" class="btn btn-dark">View my work ↗</a>
           <a href="#contact" class="btn btn-glass">Let's connect</a>
+          <!-- <a href="assets/Mustabshira-Yusuf-CV.pdf" class="btn btn-glass" download>Download CV</a> -->
         </div>
         <div class="stats">
           <div><div class="stat-n gold">5+</div><div class="stat-l">Projects done</div></div>
@@ -56,14 +60,10 @@
           <div><div class="stat-n gold">80%</div><div class="stat-l">Client satisfaction</div></div>
         </div>
       </div>
-      <div class="hero-image reveal">
+      <div class="hero-image">
         <div class="image-frame">
           <div class="image-placeholder">
-            <img src="images/mus.jpeg" alt="">
-            <!-- <picture>
-              <source srcset="images/mus.webp" type="image/webp">
-              <img src="images/mus.jpeg" alt="Mustabshira Yusuf" width="600" height="800" loading="eager" decoding="async" />
-            </picture> -->
+            <img src="images/mus.jpeg" alt="Mustabshira Yusuf" width="810" height="1080" loading="eager" decoding="async" fetchpriority="high">
           </div>
           <div class="image-badge glass">● Based in Accra · Open to remote</div>
         </div>
@@ -87,6 +87,8 @@
         <p>
           Every project is an opportunity to create something meaningful.
           I combine innovative thinking with meticulous attention to detail.
+          I speak English, Hausa, and Dagbani, which helps me connect with
+          different people and understand their ideas clearly.
         </p>
         <hr class="hairline" />
         <div class="info-grid">
@@ -94,6 +96,50 @@
           <div><span>Available</span>24/7 Support</div>
           <div><span>Focus</span>Web · UI/UX · Design</div>
           <div><span>Strengths</span>Fast learner · Detail-oriented</div>
+          <div><span>Languages</span>English · Hausa · Dagbani</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="reveal section-head">
+        <div>
+          <span class="eyebrow">Learning Path</span>
+          <h2 class="display-md">Educational <em class="gold">journey</em>.</h2>
+        </div>
+        <p class="muted">A practical journey from General Arts into IT, computer science, design, and web development.</p>
+      </div>
+      <div class="journey-list">
+        <div class="journey-item reveal">
+          <span class="journey-label">SHS Foundation</span>
+          <div>
+            <h3>Albasar SHS · General Arts</h3>
+            <p>I began my academic journey at Albasar Senior High School, where I studied General Arts and built a strong foundation in communication, research, and creative thinking.</p>
+          </div>
+        </div>
+        <div class="journey-item reveal">
+          <span class="journey-label">IT Training</span>
+          <div>
+            <h3>Muswit Fashion and IT Center</h3>
+            <p>After SHS, my curiosity about technology led me to Muswit Fashion and IT Center, where I learned Figma, Microsoft Word, computer troubleshooting, and other practical IT skills.</p>
+          </div>
+        </div>
+        <div class="journey-item reveal">
+          <span class="journey-label">Computer Science</span>
+          <div>
+            <h3>University of the People</h3>
+            <p>I later applied for an online scholarship at the University of the People and gained admission to study Computer Science. Through this program, I started learning Python and continue to grow my programming knowledge.</p>
+          </div>
+        </div>
+        <div class="journey-item reveal">
+          <span class="journey-label">Current Study</span>
+          <div>
+            <h3>Design and Technology Institute</h3>
+            <p>I also gained admission to the Design and Technology Institute, where I am currently studying web development and building stronger skills in creating responsive, user-friendly websites.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -198,21 +244,21 @@
         </div>
       </div>
       <div class="projects-grid">
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/PHOTO-2026-01-31-17-38-39.jpg" alt="Elite Automotive Landing Page" width="500" height="350"></div><div class="proj-meta"><small>UI Design · Web</small><h3>Elite Automotive</h3></div></a>
-        <a class="project reveal offset" href=""><div class="proj-img p2"><img loading="lazy" decoding="async" src="images/1AD2F949-4EDE-4010-BFBD-9A1A0A86E5DD_1_201_a.jpeg" alt="Mobile Dessert App" width="500" height="350"></div><div class="proj-meta"><small>UX/UI · Mobile</small><h3>Sweet Bites App</h3></div></a>
-         <a class="project reveal offset" href=""><div class="proj-img p2"><img loading="lazy" decoding="async" src="images/musicecream.png" alt="Mobile Dessert App" width="500" height="350"></div><div class="proj-meta"><small>UX/UI · Mobile</small><h3>Sweet Bites App</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/PHOTO-2026-01-31-17-38-39.jpg" alt="Elite Automotive Landing Page" width="500" height="350" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>UI Design · Web</small><h3>Elite Automotive</h3></div></a>
+        <a class="project reveal offset" href=""><div class="proj-img p2"><img loading="lazy" decoding="async" src="images/optimized/sweet-bites-card.jpg" alt="Mobile Dessert App" width="760" height="900" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>UX/UI · Mobile</small><h3>Sweet Bites App</h3></div></a>
+         <a class="project reveal offset" href=""><div class="proj-img p2"><img loading="lazy" decoding="async" src="images/optimized/ice-cream-card.jpg" alt="Mobile Dessert App" width="893" height="900" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>UX/UI · Mobile</small><h3>Sweet Bites App</h3></div></a>
         
-        <a class="project reveal" href=""><div class="proj-img p3"><img loading="lazy" decoding="async" src="images/musty.png" alt="Personal Identity System" width="500" height="350"></div><div class="proj-meta"><small>Identity · Web</small><h3>Personal Portfolio</h3></div></a>
-        <a class="project reveal offset" href=""><div class="proj-img p4"><img loading="lazy" decoding="async" src="images/muscoffee.png" alt="Modern Coffee website" width="500" height="350"></div><div class="proj-meta"><small>Cafe · Web</small><h3>Modern Coffee</h3></div></a>
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/musscreen.png" alt="Creative Digital Showcase" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Creative Hub</h3></div></a>
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/VRTECHMUSTA.png" alt="Virtual Reality Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Virtual Reality</h3></div></a>
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/payze.jpeg" alt="Coffee Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Coffee Project</h3></div></a>
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/navigation.png" alt="Coffee Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Navigation Project</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p3"><img loading="lazy" decoding="async" src="images/musty.png" alt="Personal Identity System" width="500" height="350" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Identity · Web</small><h3>Personal Portfolio</h3></div></a>
+        <a class="project reveal offset" href=""><div class="proj-img p4"><img loading="lazy" decoding="async" src="images/optimized/coffee-card.jpg" alt="Modern Coffee website" width="900" height="656" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Cafe · Web</small><h3>Modern Coffee</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/creative-hub-card.jpg" alt="Creative Digital Showcase" width="450" height="900" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Creative Hub</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/vr-tech-card.jpg" alt="Virtual Reality Project" width="900" height="483" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Virtual Reality</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/payze.jpeg" alt="Coffee Project" width="500" height="350" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Coffee Project</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/navigation.png" alt="Navigation Project" width="500" height="350" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Navigation Project</h3></div></a>
       
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/MY.jpg" alt="Coffee Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Form Project</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/form-card.jpg" alt="Form Project" width="900" height="704" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Form Project</h3></div></a>
       
-        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/PHOTO-2026-01-16-17-33-11.jpg" alt="Coffee Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Form Project</h3></div></a>
-       <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/house.png" alt="Housing Project" width="500" height="350"></div><div class="proj-meta"><small>Responsive · UI</small><h3>House Project</h3></div></a>
+        <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/PHOTO-2026-01-16-17-33-11.jpg" alt="Form Project" width="500" height="350" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>Form Project</h3></div></a>
+       <a class="project reveal" href=""><div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/house-card.jpg" alt="Housing Project" width="900" height="3173" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div><div class="proj-meta"><small>Responsive · UI</small><h3>House Project</h3></div></a>
       
       </div>
     </div>
@@ -230,31 +276,37 @@
       <div class="projects-grid">
         <!-- Project 1 -->
         <a class="project reveal" href="https://pearsonmusty-7hp7.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="proj-img p1"><img src="images/Screenshot%202026-06-14%20at%2012.31.27%20PM.png" alt="Patriotism Project" width="500" height="350"></div>
+          <div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/patriotism-card.jpg" alt="Patriotism Project" width="900" height="483" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
           <div class="proj-meta"><small>HTML CSS JS Web</small><h3>Patroitism</h3></div>
         </a>
         
         <!-- Project 2 -->
         <a class="project reveal offset" href="https://gridfood.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="proj-img p2"><img src="images/Screenshot%202026-06-16%20at%203.25.38%20PM.png" alt="Grid Food Project" width="500" height="350"></div>
+          <div class="proj-img p2"><img loading="lazy" decoding="async" src="images/optimized/grid-food-card.jpg" alt="Grid Food Project" width="900" height="486" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
           <div class="proj-meta"><small>CSS Grid Responsiveness</small><h3>Grid Food Project</h3></div>
+        </a>
+
+        <!-- project 6 -->
+            <a class="project reveal offset" href="https://musperfumery.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <div class="proj-img p2"><img loading="lazy" decoding="async" src="images/optimized/perfume-card.jpg" alt="Perfumery project" width="900" height="515" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
+          <div class="proj-meta"><small>Perfumery</small><h3>Ecommerce</h3></div>
         </a>
         
         <!-- Project 3 -->
         <a class="project reveal" href="https://edanso-two.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="proj-img p3"><img src="images/Screenshot 2026-06-17 at 7.29.43 AM.png" alt="Project Three" width="500" height="350"></div>
+          <div class="proj-img p3"><img loading="lazy" decoding="async" src="images/optimized/danso-card.jpg" alt="Doctor Danso project" width="900" height="484" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
           <div class="proj-meta"><small>Portfolio</small><h3> Doctor Danso </h3></div>
         </a>
 
         <!-- Project 4 -->
  <a class="project reveal" href="https://calculator-ashy-gamma-60.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="proj-img p1"><img src="images/calc.png" alt="Project Five" width="500" height="350"></div>
+          <div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/calculator-card.jpg" alt="Calculator project" width="722" height="900" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
           <div class="proj-meta"><small>Calculator </small><h3>Calculate figures</h3></div>
         </a>
 
         <!-- Project 5 -->
         <a class="project reveal" href="https://revas-sepia.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="proj-img p1"><img src="images/revas.png" alt="Project Five" width="500" height="350"></div>
+          <div class="proj-img p1"><img loading="lazy" decoding="async" src="images/optimized/revas-card.jpg" alt="Revas Tech project" width="900" height="490" sizes="(max-width: 700px) calc(100vw - 48px), 560px"></div>
           <div class="proj-meta"><small>Tech Solutions </small><h3>Revas Tech</h3></div>
         </a>
       </div>
@@ -278,6 +330,7 @@
           <!-- <span class="eyebrow">05 — Contact</span> -->
           <h2 class="display-md">Let's <em class="gold">connect</em>.</h2>
           <p class="muted">Available for full-time positions, freelance projects, and consulting.</p>
+          <a href="assets/Mustabshira-Yusuf-CV.pdf" class="btn btn-dark cv-download" download>Download CV</a>
           <ul class="contact-info">
             <li>✉ mustab15@icloud.com</li>
             <li>☎ 0595007987</li>
@@ -322,6 +375,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

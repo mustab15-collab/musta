@@ -39,7 +39,8 @@ body {
   overflow-x: hidden;
   transition: background .4s, color .4s;
 }
-img { max-width: 100%; display: block; }
+body.is-lightbox-open { overflow: hidden; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 
 /* ---------- 3. Utility ---------- */
@@ -135,6 +136,11 @@ a { color: inherit; text-decoration: none; }
   display: grid; place-items: center;
   color: white; font-family: var(--font-display); font-size: 1.5rem;
 }
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .image-badge {
   position: absolute; bottom: 16px; left: 16px; right: 16px;
   padding: 12px 16px; border-radius: 16px; font-size: .8rem;
@@ -156,7 +162,40 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted); margin-bottom: 4px;
 }
 
-/* ---------- 9. Skills cards ---------- */
+/* ---------- 9. Education ---------- */
+.journey-list {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--border);
+}
+.journey-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: start;
+  background: var(--bg);
+  padding: 34px;
+}
+.journey-label {
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.journey-item h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.journey-item p {
+  color: var(--muted);
+  max-width: 760px;
+}
+
+/* ---------- 10. Skills cards ---------- */
 .cards-grid {
   display: grid; gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -182,7 +221,7 @@ a { color: inherit; text-decoration: none; }
 }
 .card small { display: block; margin-top: 6px; color: var(--gold); font-weight: 600; }
 
-/* ---------- 10. Services ---------- */
+/* ---------- 11. Services ---------- */
 .services-grid {
   display: grid; gap: 1px; background: var(--border);
   border-radius: 24px; 
@@ -200,7 +239,7 @@ a { color: inherit; text-decoration: none; }
 .service h3 { font-size: 1.6rem; margin: 16px 0 10px; }
 .service p  { color: var(--muted); }
 
-/* ---------- 11. Projects ---------- */
+/* ---------- 12. Projects ---------- */
 .projects-grid {
   columns: 2 320px;
   column-gap: 28px;
@@ -212,18 +251,18 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow); background: var(--bg);
   margin-bottom: 28px;
   break-inside: avoid;
+  contain: layout paint;
 }
 .project.offset { margin-top: 40px; }
 .proj-img {
+  aspect-ratio: 16 / 11;
   transition: transform 1.2s ease;
-  max-height: 400px;
   overflow: hidden;
 }
 .proj-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  max-height: 400px;
   object-fit: cover;
 }
 .project:hover .proj-img { transform: scale(1.05); }
@@ -239,7 +278,7 @@ a { color: inherit; text-decoration: none; }
 .proj-meta small { letter-spacing: .2em; text-transform: uppercase; font-size: .7rem; opacity: .8; }
 .proj-meta h3    { font-size: 1.6rem; margin-top: 4px; }
 
-/* ---------- 12. Lightbox ---------- */
+/* ---------- 13. Lightbox ---------- */
 .lightbox {
   display: none;
   position: fixed;
@@ -278,7 +317,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
-/* ---------- 12. Contact ---------- */
+/* ---------- 14. Contact ---------- */
 .contact-card {
   border-radius: 32px; padding: 64px 48px;
   box-shadow: var(--shadow);
@@ -286,6 +325,7 @@ a { color: inherit; text-decoration: none; }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px;
 }
+.cv-download { margin-top: 24px; }
 .contact-info { list-style: none; margin-top: 32px; }
 .contact-info li { padding: 8px 0; color: var(--muted); }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
@@ -305,7 +345,7 @@ a { color: inherit; text-decoration: none; }
 .contact-form input:focus,
 .contact-form textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,168,106,.15); }
 
-/* ---------- 13. Footer ---------- */
+/* ---------- 15. Footer ---------- */
 .footer { padding: 80px 24px 40px; }
 .footer-row {
   display: flex; justify-content: space-between; align-items: center;
@@ -320,7 +360,7 @@ a { color: inherit; text-decoration: none; }
 }
 .socials a:hover { transform: translateY(-3px); color: var(--gold); }
 
-/* ---------- 14. Reveal-on-scroll animation ---------- */
+/* ---------- 16. Reveal-on-scroll animation ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -328,8 +368,20 @@ a { color: inherit; text-decoration: none; }
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ---------- 15. Responsive ---------- */
+@supports (content-visibility: auto) {
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 760px;
+  }
+}
+
+/* ---------- 17. Responsive ---------- */
 @media (max-width: 900px) {
+  .glass {
+    background: color-mix(in oklab, var(--bg) 92%, transparent);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
@@ -339,9 +391,56 @@ a { color: inherit; text-decoration: none; }
   }
   .menu-btn { display: grid; place-items: center; }
   .hero-grid, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .journey-item { grid-template-columns: 1fr; gap: 12px; padding: 28px; }
   .form-row { grid-template-columns: 1fr; }
   .stats    { gap: 24px; flex-wrap: wrap; }
-  .section  { padding: 80px 24px; }
+  .section  { padding: 80px 0; }
+  .hero     { padding: 140px 0 80px; }
+  .services-grid { grid-template-columns: 1fr; }
   .project.offset { margin-top: 0; }
   .contact-card { padding: 40px 24px; }
+  .icon-btn:hover,
+  .btn:hover,
+  .card:hover,
+  .socials a:hover {
+    transform: none;
+  }
+  .btn:hover,
+  .card:hover {
+    box-shadow: none;
+  }
+  .project:hover .proj-img {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 18px; }
+  .nav { top: 12px; padding: 0 12px; }
+  .nav-inner { padding: 10px 12px; }
+  .logo { font-size: 1.1rem; }
+  .hero { padding: 120px 0 64px; }
+  .section { padding: 68px 0; }
+  .section-head { margin-bottom: 38px; }
+  .stats { gap: 18px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .projects-grid { columns: 1; }
+  .proj-meta { padding: 18px; }
+  .contact-card { border-radius: 24px; padding: 32px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
