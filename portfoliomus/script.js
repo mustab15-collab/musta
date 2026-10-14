@@ -57,24 +57,36 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach(el => el.classList.add('visible'));
 }
 
-/* ---------- 5. Contact form (demo) ---------- */
-const form      = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
+/* ---------- Contact form: WhatsApp ---------- */
+const form = document.getElementById('contactForm');
 
-if (form && submitBtn) {
+if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    submitBtn.textContent = "Thank you — I'll be in touch ✓";
-    submitBtn.disabled = true;
-    form.reset();
+    const name = form.elements['name'].value.trim();
+    const email = form.elements['email'].value.trim();
+    const subject = form.elements['subject'].value.trim();
+    const message = form.elements['message'].value.trim();
 
-    setTimeout(() => {
-      submitBtn.textContent = 'Send message ↗';
-      submitBtn.disabled = false;
-    }, 4000);
+    const whatsappNumber = '233595007987';
+
+    const text = `Hello Mustabshira! I contacted you through your portfolio.
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject || 'Not provided'}
+
+Message:
+${message}`;
+
+    const whatsappURL =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
   });
 }
+
 
 /* ---------- 6. Lightbox functionality ---------- */
 const lightbox = document.getElementById('lightbox');
